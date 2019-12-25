@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/user/welcome');
-});
 
-Route::get('/login','UserController@login');
+
+Route::get('/','UserController@getuser');
 Route::get('/register','UserController@register');
+Route::post('/register-user','UserController@create_register');
+Route::get('/login','UserController@login');
 Route::post('/login-user','UserController@login_post');
 Route::get('/logout','UserController@logout');
+Route::get('/books','UserController@viewbooks');
 

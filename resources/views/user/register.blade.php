@@ -2,7 +2,7 @@
 @section('content')
 <h4 style="margin-left:20%">Register</h4>
 <br><br>
-<form action="" method="POST" role="form" enctype="multipart/form">
+<form action="register-user" method="POST" role="form" enctype="multipart/form">
 {{ csrf_field() }}
 <div>
         <div style="margin-top:15px;">
