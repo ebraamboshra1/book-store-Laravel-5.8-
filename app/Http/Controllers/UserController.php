@@ -13,7 +13,7 @@ class UserController extends Controller
     }
     
     public function create_register($Request){
-        User->insert(
+        DB::table('users')->insert(
             ['email' => 'john@example.com', 'votes' => 0]
         );
     }
