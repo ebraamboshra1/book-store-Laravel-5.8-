@@ -20,8 +20,8 @@ Route::get('/login','UserController@login');
 Route::post('/login-user','UserController@login_post');
 Route::get('/logout','UserController@logout');
 Route::get('/books','UserController@viewbooks');
-
-
+Route::get('/buy/{id}','BookController@buy');
+Route::get('/book-buy/{id}','BookController@buy_post');
 
 //Admin
 Route::get('/login-Admin','AdminController@login_view');
@@ -32,3 +32,18 @@ Route::get('/admin-c', function () {
     return view('admin/adminadd');
 });
 Route::post('admin-create','AdminController@create');
+Route::get('/admin-update/{id}', 'AdminController@get');
+Route::get('/admin-edit/{id}', 'AdminController@update');
+Route::get('/admin-delete/{id}','AdminController@delete');
+
+
+//Book
+Route::get('/book-table','BookController@index');
+Route::get('/book-c', function () {
+    return view('admin/bookadd');
+});
+Route::post('book-create','BookController@create');
+Route::get('/book-update/{id}', 'BookController@get');
+Route::get('/book-edit/{id}', 'BookController@update');
+Route::get('/book-delete/{id}','BookController@delete');
+

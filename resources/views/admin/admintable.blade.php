@@ -19,10 +19,16 @@
         <td style="color:#000000;">{{$a->full_name}}</td>
         <td style="color:#000000;">{{$a->email}}</td>
         <td style="color:#000000;">{{$a->password}}</td>
-        <td style="color:#000000;"><center><a>Edit</a>  || <a>Delete</a></center></td>
+        <td style="color:#000000;"><center><a href="/admin-update/{{$a->id}}">Edit</a>  || <a href="/admin-delete/{{$a->id}}">Delete</a></center></td>
         </tr>
         @endforeach
   </tbody>
 </table>
-
+<script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
 @endSection

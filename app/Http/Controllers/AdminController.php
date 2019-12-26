@@ -49,5 +49,32 @@ class AdminController extends Controller
           }
     }
 
-    
+    public function get($id){
+        $admin = Admin::find($id);
+       //$admin = $admins->contains(Admin::find($id));
+       if(is_null($admin)){
+        return redirect()->back() ->with('alert', 'error!');
+     }
+     return view('admin/adminupdate')->with('admin',$admin)->render();
+        
+    }
+
+    public function update(Request $request,$id){
+        $admin = Admin::find($id);
+        $admin->full_name=$request->full_name;
+        $admin->email=$request->email;
+        $admin->password=$request->password;
+        $admin->save();
+        if(is_null($admin)){
+            return redirect()->back() ->with('alert', 'error!');
+         }
+        return redirect('/admin-table');
+    }
+
+    public function delete($id){
+        $admin = Admin::find($id);
+        $admin->delete();
+        return redirect()->back()->with('alert', 'Done!');
+    }
+
 }

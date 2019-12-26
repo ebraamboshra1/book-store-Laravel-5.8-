@@ -38,7 +38,7 @@ Licence URI: https://www.os-templates.com/template-terms
           <li class="active"><a href="/book-table">Books</a></li>
           
               <li><a href="/admin-table">Admins</a></li>
-              <li><a href="/user-table">Users</a></li>
+
           <li><a href="/logout">Sign Out</a></li>
           
         </ul>
@@ -58,7 +58,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
+<div class="wrapper row3" style="margin-top:auto;">
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
